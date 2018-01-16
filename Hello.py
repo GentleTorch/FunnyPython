@@ -1,6 +1,7 @@
 
 import numpy as np
 import random
+import re
 
 data=np.array((1,2,3,4))
 
@@ -16,6 +17,12 @@ def demo_random():
     pos=data.index(123)
     print data[pos:pos+5]
 
+def demo_re():
+    str='23@qq.com;odosp@gmail.com'
+    p=re.compile('([\d]+)@[\w]+.com')
+    print p.findall(str);
+
 
 if __name__=='__main__':
     demo_random()
+    demo_re()
